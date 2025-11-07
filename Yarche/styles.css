@@ -1,0 +1,957 @@
+/* Шрифты */
+@font-face {
+    font-family: 'Cera';
+    src: url('fonts/cerapro-regular.woff2') format('woff2');
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Gilroy';
+    src: url('fonts/gilroy-regular.woff2') format('woff2');
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'CeraMed';
+    src: url('fonts/cerapro-medium.woff2') format('woff2');
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'CeraBold';
+    src: url('fonts/CeraProBold.ttf') format('truetype');
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'GilroyBold';
+    src: url('fonts/GilroyBold.ttf') format('truetype');
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'GilroyMed';
+    src: url('fonts/GilroyMedium.ttf') format('truetype');
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'GilroyHeavy';
+    src: url('fonts/GilroyHeavy.ttf') format('truetype');
+    font-style: normal;
+}
+
+/* Общие стили */
+body {
+    margin: 0;
+    padding: 0;
+    background-color: black;
+}
+
+/* Хедер */
+.header-cont {
+    background: url(fotos/image\ 59.png) no-repeat left;
+    background-size: 887px;
+}
+
+/* Стили для хедера */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: rgba(0, 0, 0, 0.1);
+    color: #fff;
+}
+
+/* Стили для логотипа */
+.logo img {
+    height: 40px;
+    margin-left: 20px;
+}
+
+.contact {
+    margin-right: 20px;
+    font-family: 'Gilroy';
+}
+
+/* Стили для навигации на десктопе */
+.nav {
+    display: flex;
+    gap: 20px;
+}
+
+.nav a {
+    color: #fff;
+    text-decoration: none;
+    font-family: 'Gilroy';
+    font-size: 18px;
+    font-weight: 600;
+}
+
+/* Стили для кнопки бургер-меню (скрыта на десктопе) */
+.menu-toggle {
+    display: none;
+    flex-direction: column;
+    justify-content: space-around;
+    width: 30px;
+    height: 24px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    z-index: 1000;
+}
+
+.menu-toggle span {
+    width: 100%;
+    height: 3px;
+    background: rgb(230, 70, 0);
+    /* Оранжевый цвет */
+    transition: all 0.3s ease;
+}
+
+/* Анимация для бургер-меню */
+.menu-toggle.open span:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px);
+}
+
+.menu-toggle.open span:nth-child(2) {
+    opacity: 0;
+}
+
+.menu-toggle.open span:nth-child(3) {
+    transform: rotate(-45deg) translate(5px, -5px);
+}
+
+/* Стили для мобильной версии */
+@media (max-width: 768px) {
+    .menu-toggle {
+        display: flex;
+    }
+
+    .nav {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        width: 100%;
+        background: rgb(245, 245, 245);
+        background-color: rgba(255, 255, 255, 0.9);
+        /* Оранжевый фон */
+        padding: 20px;
+        z-index: 999;
+    }
+
+    .nav.active {
+        display: flex;
+    }
+
+    .nav a {
+        margin: 10px 0;
+        color: #333;
+        /* Белый цвет текста для контраста */
+    }
+}
+
+@media (max-width: 360px) {
+    .header {
+        padding: 10px;
+    }
+
+    .menu-toggle {
+        width: 25px;
+        height: 20px;
+    }
+
+    .menu-toggle span {
+        height: 2px;
+    }
+
+    .nav {
+        top: 50px;
+        padding: 10px;
+    }
+
+    .nav a {
+        font-size: 16px;
+    }
+}
+
+/* Секция с контентом */
+.content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    margin-left: 50px;
+}
+
+.text-section {
+    max-width: 650px;
+    text-align: left;
+    color: rgb(255, 255, 255);
+}
+
+.text-section h1 {
+    font-size: 48px;
+    margin: 24px auto;
+    margin-left: 50px;
+    font-family: 'CeraBold';
+    font-weight: 900;
+    line-height: 52px;
+    letter-spacing: 0%;
+    text-align: left;
+    text-transform: uppercase;
+}
+
+.yarko {
+    color: #ff6600;
+}
+
+.text-section p {
+    font-size: 22px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: 24px;
+    margin-left: 50px;
+    font-family: 'GilroyMed';
+    font-weight: 600;
+    line-height: 30px;
+    letter-spacing: 0%;
+    text-align: left;
+}
+
+.buy-button {
+    background-color: rgb(230, 70, 0);
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    border-radius: 50px;
+    margin-left: 50px;
+    width: 216px;
+    height: 56px;
+    font-family: 'CeraBold';
+    transition: background-color 0.3s ease;
+}
+
+button[type="buy"]:hover {
+    background-color: #ff6600;
+}
+
+.image-cont {
+    position: relative;
+    width: 700px;
+    background: url(fotos/fire-flames-on-black-background\ 1.png) no-repeat center;
+    height: 550px;
+}
+
+.image-section img {
+    max-width: 100%;
+    height: auto;
+    position: relative;
+    z-index: 1;
+    margin-left: 150px;
+}
+
+/* Адаптация для 768px */
+@media (max-width: 768px) {
+    .content {
+        flex-direction: column;
+        align-items: center;
+        margin-left: 0;
+        padding: 10px;
+    }
+
+    .text-section {
+        max-width: 100%;
+        text-align: center;
+        margin-left: 0;
+    }
+
+    .text-section h1,
+    .text-section p {
+        margin-left: 0;
+        text-align: center;
+    }
+
+    .buy-button {
+        margin-left: 0;
+        margin-top: 20px;
+    }
+
+    .image-cont {
+        width: 100%;
+        height: auto;
+        background-size: cover;
+        margin-top: 20px;
+    }
+
+    .image-section img {
+        margin-left: 0;
+        width: 100%;
+    }
+}
+
+/* Адаптация для 360px */
+@media (max-width: 360px) {
+    .text-section h1 {
+        font-size: 36px;
+        line-height: 40px;
+    }
+
+    .text-section p {
+        font-size: 18px;
+        line-height: 24px;
+    }
+
+    .buy-button {
+        width: 180px;
+        height: 50px;
+        font-size: 14px;
+    }
+
+    .image-cont {
+        height: 300px;
+    }
+}
+
+/* Секция преимуществ */
+.advantages-section {
+    padding: 20px;
+    text-align: center;
+    background-color: rgb(245, 245, 245);
+    position: relative;
+    overflow: hidden;
+}
+
+.advantages-section::after {
+    content: '';
+    position: absolute;
+    bottom: 10px;
+    left: 200px;
+    width: 100%;
+    height: 500px;
+    background: url(fotos/black-smoke-on-white-background\ 1.png) no-repeat;
+    background-size: center;
+    z-index: 1;
+}
+
+.advantages-section h2 {
+    font-size: 40px;
+    margin-bottom: 50px;
+    text-transform: uppercase;
+    color: rgb(255, 81, 0);
+    position: relative;
+    z-index: 2;
+    font-family: 'CeraBold';
+}
+
+.advantages-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    gap: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 2;
+}
+
+.advantage-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.advantage-item img {
+    width: 100px;
+    height: 100px;
+    margin-bottom: 10px;
+}
+
+.advantage-item p {
+    font-size: 18px;
+    color: rgb(0, 0, 0);
+    font-family: 'GilroyMed';
+}
+
+/* Адаптация секции преимуществ */
+@media (max-width: 768px) {
+    .advantages-grid {
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(3, 1fr);
+    }
+}
+
+@media (max-width: 480px) {
+    .advantages-grid {
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(6, 1fr);
+    }
+}
+
+/* Секция "Как заправлять" */
+.how-to-refill-section {
+    padding: 20px;
+    text-align: center;
+    background: url(fotos/Rectangle\ 67.png);
+}
+
+.how-to-refill-section h2 {
+    font-size: 40px;
+    margin-bottom: 50px;
+    text-transform: uppercase;
+    color: rgb(255, 81, 0);
+    font-family: 'CeraBold';
+}
+
+.steps-container {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    flex-wrap: wrap;
+}
+
+.step {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    min-height: 150px;
+    gap: 20px;
+}
+
+.step img {
+    width: 100px;
+    height: 100px;
+    margin-bottom: 10px;
+    margin-top: 20px;
+}
+
+.step p {
+    font-size: 18px;
+    color: rgb(255, 255, 255);
+    text-align: center;
+    -webkit-line-clamp: 2;
+    line-height: 1.5;
+    max-width: 250px;
+    margin: 0;
+    padding: 0;
+    height: 48px;
+    font-family: 'CeraMed';
+}
+
+.arrow-img {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: -50px;
+    margin-right: 20px;
+}
+
+.arrow-img-2 {
+    width: 60px;
+    height: auto;
+    margin-left: 10px;
+    margin-top: -50px;
+}
+
+/* Адаптация секции "Как заправлять" */
+@media (max-width: 768px) {
+    .steps-container {
+        flex-direction: column;
+    }
+
+    .arrow-img,
+    .arrow-img-2 {
+        display: none;
+    }
+
+    .step {
+        margin-bottom: 20px;
+    }
+}
+
+/* Секция "Где купить" */
+.where-to-buy-section {
+    padding: 40px 20px;
+    text-align: center;
+    background-color: #f5f5f5;
+}
+
+.where-to-buy-section h2 {
+    font-size: 40px;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    color: rgb(255, 81, 0);
+    font-family: 'CeraBold';
+}
+
+.where-to-buy-section p {
+    font-size: 22px;
+    color: rgb(0, 0, 0);
+    margin-bottom: 40px;
+    font-family: 'GilroyMed';
+}
+
+.marketplaces {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.marketplace {
+    text-align: center;
+}
+
+.marketplace img {
+    width: 283px;
+    height: auto;
+}
+
+.line-image {
+    margin-top: 40px;
+    text-align: center;
+}
+
+.line-image img {
+    width: 500px;
+    height: auto;
+}
+
+/* Адаптация секции "Где купить" */
+@media (max-width: 768px) {
+    .marketplaces {
+        flex-direction: column;
+        gap: 5px;
+    }
+
+    .marketplace img {
+        width: 200px;
+    }
+
+    .line-image img {
+        width: 150px;
+    }
+}
+
+/* Секция партнеров */
+.partners-cont {
+    background-color: rgb(245, 245, 245);
+    position: relative;
+    overflow: hidden;
+}
+
+.partners-section {
+    padding: 40px 20px;
+    text-align: center;
+    background-color: #f5f5f5;
+    position: relative;
+    z-index: 2;
+}
+
+.partners-section::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 50%;
+    height: 300px;
+    background: url(fotos/black-smoke-on-white-background\ 1.png) no-repeat right bottom;
+    background-size: cover;
+    z-index: 1;
+}
+
+.partners-section h2 {
+    font-size: 40px;
+    margin-bottom: 40px;
+    text-transform: uppercase;
+    color: rgb(255, 81, 0);
+    position: relative;
+    z-index: 2;
+    font-family: 'CeraBold';
+}
+
+.partners-grid {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+    flex-wrap: wrap;
+    max-width: 1200px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 2;
+}
+
+.partner {
+    text-align: center;
+    flex: 1 1 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 150px;
+}
+
+.partner img {
+    width: auto;
+    max-width: 120px;
+    height: auto;
+    margin-bottom: 10px;
+}
+
+/* Адаптация секции партнеров */
+@media (max-width: 768px) {
+    .partners-grid {
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: auto auto;
+        gap: 20px;
+    }
+
+    .partner:nth-child(n+4) {
+        grid-column: span 3;
+    }
+
+    .partners-section::after {
+        width: 100%;
+        height: 200px;
+    }
+}
+
+@media (max-width: 326px) {
+    .partners-grid {
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: auto auto;
+    }
+
+    .partner:nth-child(n+4) {
+        grid-column: span 2;
+    }
+}
+
+/* Секция "Купить оптом" */
+.buy-wholesale-section {
+    padding: 60px 20px 80px;
+    text-align: center;
+    background-color: #333;
+    background: url(fotos/Rectangle\ 67.png) no-repeat center center;
+    background-size: cover;
+    color: #fff;
+    position: relative;
+    margin-top: -20px;
+    z-index: 1;
+    min-height: 100%;
+}
+
+.buy-wholesale-section h2 {
+    font-size: 40px;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+    color: rgb(0, 0, 0);
+    text-align: left;
+    margin-left: 20px;
+    font-family: 'CeraBold';
+    line-height: 44px;
+    font-weight: 900;
+}
+
+.buy-wholesale-section p {
+    font-size: 18px;
+    margin-bottom: 40px;
+    color: #333;
+    text-align: left;
+    margin-left: 20px;
+    font-family: 'GilroyMed';
+}
+
+.form-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    background-color: rgb(245, 245, 245);
+    padding: 30px;
+    border: 4px solid rgb(255, 81, 0);
+    border-radius: 50px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+.wholesale-form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding-left: 20px;
+}
+
+.form-row {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+}
+
+.form-group {
+    flex: 1;
+    text-align: left;
+    position: relative;
+}
+
+.form-group label {
+    font-size: 16px;
+    color: #333;
+    margin-bottom: 5px;
+    display: block;
+    font-family: 'GilroyMed';
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    border: none;
+    background-color: transparent;
+    color: #333;
+    outline: none;
+    font-family: 'GilroyMed';
+}
+
+/* Линия под полем "Имя" */
+.form-group:first-child::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 95%;
+    height: 2px;
+    background-color: rgb(255, 81, 0);
+}
+
+/* Линия под полем "E-mail" */
+.form-group:last-child::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 96%;
+    height: 2px;
+    background-color: rgb(255, 81, 0);
+}
+
+/* Поле "Комментарий" */
+.form-group textarea {
+    border: 2px solid rgb(255, 81, 0);
+    border-radius: 5px;
+    background-color: rgb(245, 245, 245);
+    margin-top: 10px;
+    margin-left: -20px;
+}
+
+/* Контейнер для кнопки и текста */
+.button-notice-container {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    margin-left: -20px;
+}
+
+button[type="submit"] {
+    background-color: rgb(230, 70, 0);
+    color: #fff;
+    padding: 15px 50px;
+    border: none;
+    border-radius: 50px;
+    font-size: 18px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    width: 200px;
+    margin-top: -38px;
+    font-family: 'GilroyMed';
+}
+
+button[type="submit"]:hover {
+    background-color: #ff6600;
+}
+
+.form-notice {
+    font-size: 14px;
+    color: #333;
+    margin: 0;
+}
+
+.form-notice a {
+    color: rgb(255, 81, 0);
+    text-decoration: none;
+}
+
+.form-notice a:hover {
+    text-decoration: underline;
+}
+
+@media (max-width: 768px) {
+    .form-container {
+        padding: 20px;
+        border-radius: 30px;
+    }
+
+    .wholesale-form {
+        padding-left: 0;
+    }
+
+    .form-row {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .form-group {
+        width: 100%;
+    }
+
+    .form-group:first-child::after,
+    .form-group:last-child::after {
+        width: 100%;
+    }
+
+    .form-group textarea {
+        margin-left: 0;
+        margin-left: -12px;
+    }
+
+    .button-notice-container {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+        margin-left: 0;
+    }
+
+    button[type="submit"] {
+        width: 100%;
+        margin-top: 0;
+        padding: 10px 20px;
+    }
+
+    .form-notice {
+        text-align: left;
+    }
+}
+
+@media (max-width: 360px) {
+    .form-container {
+        padding: 15px;
+        border-radius: 20px;
+    }
+
+    .form-row {
+        gap: 10px;
+    }
+
+    .form-group input,
+    .form-group textarea {
+        padding: 8px;
+        font-size: 14px;
+    }
+
+    .form-group textarea {
+        margin-top: 5px;
+    }
+
+    button[type="submit"] {
+        padding: 8px 15px;
+        font-size: 16px;
+    }
+
+    .form-notice {
+        font-size: 12px;
+    }
+}
+
+/* Футер */
+.footer {
+    max-width: 100%;
+    margin: 40px auto 0;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: end;
+}
+
+.footer-logo img {
+    width: auto;
+    height: 40px;
+}
+
+.footer-text {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    font-size: 14px;
+    font-family: 'GilroyMed';
+}
+
+.footer-text p {
+    margin: 0;
+    font-size: 14px;
+    color: #fff;
+}
+
+.footer-text a {
+    color: #ffff;
+}
+
+@media (max-width: 768px) {
+    .footer {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        padding: 20px 10px;
+    }
+
+    .footer-logo img {
+        height: 30px;
+        margin-bottom: 10px;
+    }
+
+    .footer-text {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .footer-text p {
+        font-size: 12px;
+    }
+
+    .footer-text a {
+        font-size: 12px;
+    }
+}
+
+@media (max-width: 360px) {
+    .footer {
+        padding: 15px 5px;
+    }
+
+    .footer-logo img {
+        height: 25px;
+        margin-bottom: 5px;
+    }
+
+    .footer-text {
+        gap: 5px;
+    }
+
+    .footer-text p {
+        font-size: 10px;
+    }
+
+    .footer-text a {
+        font-size: 10px;
+    }
+}
